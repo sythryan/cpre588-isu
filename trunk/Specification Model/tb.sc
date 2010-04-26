@@ -18,7 +18,7 @@ const unsigned long SIZE = 10;
 
 behavior Main
 {
-	c_queue Settingsin((SIZE)), Tempin((SIZE)), Moisturein((SIZE)), 				Heatercontrol((SIZE)), Sprinklercontrol ((SIZE)), Tempout((SIZE)), 		Moistureout((SIZE));
+	c_queue Settingsin((SIZE)), Tempin((SIZE)), Moisturein((SIZE)), Heatercontrol((SIZE)), Sprinklercontrol ((SIZE)), Tempout((SIZE)), Moistureout((SIZE));
 
 	Stimulus S(Settingsin, Tempin, Moisturein);
 	ClimateControl C(Settingsin, Tempin, Moisturein, Heatercontrol, Sprinklercontrol, Tempout, Moistureout);

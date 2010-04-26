@@ -8,18 +8,21 @@
 #include <stdlib.h>
 #include <string.h>
 
-import "init";
-import "io";
-import "parity";
+import "Read_Settings";
+import "Clock";
+import "Process_Temperature";
+import "Process_Moisture";
+
+const unsigned long SIZE = 10;
 
 behavior ClimateControl(i_receiver settingsin, i_receiver tempin, i_receiver moisturein, i_sender heatcontrol, i_sender sprinklercontrol, i_sender tempout, i_sender moistureout)
 {
-	
+	c_queue Tempclockdata((SIZE)), Moistclockdata((SIZE)), Moisturesetin((SIZE)), Tempsetin((SIZE));
 
-	readsettings R();
-	clock C();
-	processtemp T();
-	processmoisture M();
+	readsettings R(settingsin, Tempsetin, Moisturesetin);
+	clock C(Tempclockdata, Moistclockdata);
+	processtemp T(Tempclockdata, Tempsetin, tempin, heatcontrol, tempout);
+	processmoisture M(Moistclockdata, Moisturesetin, moisturein, sprinklercontrol, moistureout);
 
 	void main (void)
 	{
