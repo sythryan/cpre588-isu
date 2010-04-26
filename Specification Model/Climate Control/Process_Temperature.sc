@@ -9,8 +9,15 @@
 #include <stdlib.h>
 #include <string.h>
 
-behavior processtemp(i_receiver tempclockdata, i_receiver tempsetin, i_receiver tempdatain, i_sender heateronoff, i_sender tempdataout)
+import "Process_Temperature\Temp_AtoD";
+import "Process_Temperature\TempProcessing";
+import "Process_Temperature\HeatControl";
+
+behavior processtemp()
 {
+
+
+
 	void main(void) {
 
 	}

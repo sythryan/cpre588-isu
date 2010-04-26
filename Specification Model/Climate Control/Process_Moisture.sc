@@ -9,8 +9,15 @@
 #include <stdlib.h>
 #include <string.h>
 
-behavior processmoisture(i_receiver moistclockdata, i_receiver moisturesetin, i_receiver moisturedatain, i_sender sprinkleronoff, i_sender moisturedataout)
+import "Process_Moisture\Moist_AtoD";
+import "Process_Moisture\MoistProcessing";
+import "Process_Moisture\SprinklerControl";
+
+behavior processmoisture()
 {
+
+
+
 	void main(void) {
 
 	}
