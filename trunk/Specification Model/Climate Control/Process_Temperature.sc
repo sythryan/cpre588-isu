@@ -9,16 +9,21 @@
 #include <stdlib.h>
 #include <string.h>
 
-import "Process_Temperature\Temp_AtoD";
 import "Process_Temperature\TempProcessing";
 import "Process_Temperature\HeatControl";
 
-behavior processtemp()
+behavior processtemp(i_receiver tempdatain, i_sender heatcontrol, i_sender tempdataout)
 {
 
-
+	c_queue C1;
+	tempprocess P(tempdatain, C1);
+	heatcontrol C(C1, heatcontrol);
 
 	void main(void) {
+		par {
+			P.main();
+			C.main();
+		}
 
 	}
 };

@@ -9,16 +9,22 @@
 #include <stdlib.h>
 #include <string.h>
 
-import "Process_Moisture\Moist_AtoD";
 import "Process_Moisture\MoistProcessing";
 import "Process_Moisture\SprinklerControl";
 
-behavior processmoisture()
+behavior processmoisture(i_receiver moistdatain, i_sender sprinklercontrol, i_sender moistdataout)
 {
 
+	c_queue C2;
+	tempprocess P(moistdatain, C2);
+	heatcontrol C(C2, sprinklercontrol);
 
 
 	void main(void) {
+		par {
+			P.main();
+			C.main();
+		}
 
 	}
 };
