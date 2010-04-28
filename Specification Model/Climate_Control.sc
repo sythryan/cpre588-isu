@@ -17,12 +17,11 @@ const unsigned long SIZE = 10;
 
 behavior ClimateControl(i_receiver settingsin, i_receiver tempin, i_receiver moisturein, i_sender heatcontrol, i_sender sprinklercontrol, i_sender tempout, i_sender moistureout)
 {
-	c_queue Tempclockdata((SIZE)), Moistclockdata((SIZE)), Moisturesetin((SIZE)), Tempsetin((SIZE));
+	c_queue Moistclockdata((SIZE)), Moisturesetin((SIZE)), Tempsetin((SIZE));
 
 	readsettings R(settingsin, Tempsetin, Moisturesetin);
-	clock C(Tempclockdata, Moistclockdata);
-	processtemp T(Tempclockdata, Tempsetin, tempin, heatcontrol, tempout);
-	processmoisture M(Moistclockdata, Moisturesetin, moisturein, sprinklercontrol, moistureout);
+	processtemp T(Tempsetin, tempin, heatcontrol, tempout);
+	processmoisture M(Moisturesetin, moisturein, sprinklercontrol, moistureout);
 
 	void main (void)
 	{

@@ -12,11 +12,11 @@
 import "Process_Temperature\TempProcessing";
 import "Process_Temperature\HeatControl";
 
-behavior processtemp(i_receiver tempdatain, i_sender heatcontrol, i_sender tempdataout)
+behavior processtemp(i_receiver tempsettingsin, i_receiver tempdatain, i_sender heatcontrol, i_sender tempdataout)
 {
 
 	c_queue C1;
-	tempprocess P(tempdatain, C1);
+	tempprocess P(tempsettingsin, tempdatain, C1, tempdataout);
 	heatcontrol C(C1, heatcontrol);
 
 	void main(void) {
