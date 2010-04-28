@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-behavior tempprocess(i_receiver tempdatain, i_sender tempdataout)
+behavior tempprocess(i_receiver tempsettingsin, i_receiver tempdatain, i_sender tempdatacontrol, i_sender tempdataout)
 {
 	void main(void) {
 
