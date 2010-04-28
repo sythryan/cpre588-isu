@@ -10,6 +10,7 @@
 #include "stimulus.h"
 #include "climateControl.h"
 #include "stdbool.h"
+#include "time.h"
 
 
 /*-------------------------------------------------------*\
@@ -24,6 +25,10 @@ static float localDesiredHumd = 70.0;
 bool heaterNeeded = false;
 bool sprinklerNeeded = false;
 
+
+//Time from System
+  time_t heaterStartTime, sprinklerStartTime; 
+  time_t lastCycle;
 
 
 /*-------------------------------------------------------*\
@@ -54,40 +59,75 @@ void process();
 // Note: this fucntion assumes sensor is digital so 
 //    original design was modified to remove AD conversion.
 //---------------------------------------------------------
-void readSettings()
+void readSensors()
 {
+		// Sensor Data
 	 	localCurrentTemp = currentSensorTemp();	
-		localDesiredTemp = keypadDesiredTemp();
 	 	localCurrentHumd = currentSensorHumd();	
-		localDesiredHumd = keypadDesiredHumd();
 }
 
-
 //---------------------------------------------------------
-//  CLOCK
+// READSETTINGS
+// Get sensor data and keypad data
+// Note: this fucntion assumes sensor is digital so 
+//    original design was modified to remove AD conversion.
 //---------------------------------------------------------
-void clock()
+void desiredValues()
 {
-	//time_t localTempTime, localHumdTime;
-	//time(&localTempTime);
-	//time(&localHumdTime);
-	return;
+	float dt = keypadDesiredTemp();
+	float dh = keypadDesiredHumd();
+
+	if ((localDesiredTemp /= dt) ||	(localDesiredHumd /= dh))
+	{
+			//  Desired Values
+			localDesiredTemp = keypadDesiredTemp();
+			localDesiredHumd = keypadDesiredHumd();
+	}
 }
 
+
+
+
+//---------------------------------------------------------
+//   CONTROL 
+//      checkIfInRange
+//---------------------------------------------------------
+bool checkIfInRange(float current, float desired, float deviation )
+{
+	float minDesired  = desired - deviation;
+	 	
+		if (current < minDesired)
+			return true;
+		else
+			return false;
+}
+						
 //---------------------------------------------------------
 //  PROCESSCONTROLTEMP
 //---------------------------------------------------------
 void processControlTemp()
-{
- 	// PROCESS 
- 	float lowTriggerValue  =  localDesiredTemp - MAX_TEMP_DEVIATION;
- 	
-	// CONTROL
-	if (localCurrentTemp < lowTriggerValue)
-		heaterNeeded = true;
-	else
-		heaterNeeded = false;
-} 
+{ 
+	time_t clk; 
+	
+	// Determine time since last temperature check
+	double deltaTime = difftime( clk, lastCycle);
+	double duration = difftime( clk, heaterStartTime);
+
+	// Check temperature if it's been > 1 second
+	if (deltaTime > ONE_SECOND)
+	{
+			// Check if heater should be turned on from off  OR
+			// Heater has been on long enough to recheck
+			if ( ( heaterNeeded == false) || 	(duration > HEATERDURATION) )
+			{
+					heaterNeeded =	checkIfInRange(localCurrentTemp ,
+							localDesiredTemp , MAX_TEMP_DEVIATION);
+			
+					if heaterNeeded
+						heaterStartTime = clock();
+			}
+	}
+}
 
 //---------------------------------------------------------
 //  PROCESSCONTROLHUMD
@@ -112,11 +152,11 @@ void processControlHumd()
 
 void process()
 {
-	readSettings();
+	desiredValues();
+	readSensors();
 	
-	// Note: No A/D conversion, considered outside of system.	
-			
 	processControlTemp();
+	
 	processControlHumd();
 
 }
