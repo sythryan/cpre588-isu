@@ -16,16 +16,10 @@ import "i_receiver";
 behavior heatcontrol(i_receiver tempdatain, i_sender heatcontrolout)
 {
 
-	double h;
-
 	void main(void) {
-	
-		tempdatain.receive(&h, sizeof(h));
-		if ((h - AVG_TEMP) >( - DEVIATION ))
-			heatcontrolout.send(1, 1);
-		else
-			heatcontrolout.send(0, 1); //false
+
 	}
+
 };
 
 	

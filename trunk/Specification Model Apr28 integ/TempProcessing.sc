@@ -13,8 +13,17 @@ import "i_receiver";
 
 behavior tempprocessing(i_receiver tempsettingsin, i_receiver tempdatain, i_sender tempdatacontrol, i_sender tempdataout)
 {
-	void main(void) {
 
+	double h;
+
+	void main(void) {
+	
+		tempdatain.receive(&h, sizeof(h));
+		if ((h - AVG_TEMP) >( - DEVIATION ))
+			tempdatacontrol.send(1, 1);
+		else
+			tempdatacontrol.send(0, 1); //false
 	}
+
 };
 

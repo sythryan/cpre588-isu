@@ -24,7 +24,6 @@ behavior Read_Settings(i_receiver settingsin, i_sender tempsetout, i_sender mois
 		tempsetout.send(&tSetting, sizeof(tSetting));
 		moisturesetout.send(&mSetting, sizeof(mSetting));
 		
-
 		waitfor 1.0;
 
 	}
