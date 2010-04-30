@@ -16,7 +16,7 @@
 import "c_queue";
 
 
-behavior TempSense(i_sender TSENSE, char *data){
+behavior TempSense(i_sender TSENSE){
 
 	void main(){
 	
@@ -40,7 +40,7 @@ behavior TempSense(i_sender TSENSE, char *data){
 
 };
 
-behavior MoistSense(i_sender MSENSE, char *data){
+behavior MoistSense(i_sender MSENSE){
 
 	void main(){
 	
@@ -61,7 +61,7 @@ behavior MoistSense(i_sender MSENSE, char *data){
 	}
 };
 
-behavior UserEntry(i_sender USERSET, char *data){
+behavior UserEntry(i_sender USERSET){
 
 	void main(){
 		//unsigned
@@ -106,9 +106,9 @@ behavior Stimulus(i_sender USER_SET, i_sender M_SENSE, i_sender T_SENSE)
     //unsigned 
     char U_data[SIZE];
     
-    TempSense	TTSense(T_SENSE, &T_data);
-  	MoistSense	MSense(M_SENSE, M_data);
-	UserEntry	User(USER_SET, U_data);
+    TempSense	TTSense(T_SENSE);
+  	MoistSense	MSense(M_SENSE);
+	UserEntry	User(USER_SET);
 
 	void main(void)
   {
@@ -120,3 +120,4 @@ behavior Stimulus(i_sender USER_SET, i_sender M_SENSE, i_sender T_SENSE)
      }
   }
 };
+

@@ -27,7 +27,7 @@ behavior Main
 	c_queue				M_OUT((SIZE));
 
 	Stimulus			STM(USER_SET, M_SENSE, T_SENSE);
-	Climate_Control				C_CONTROLLER(USER_SET, M_SENSE, T_SENSE
+	Climate_Control				CONT(USER_SET, M_SENSE, T_SENSE
 									 HEATER, SPRINKLER, M_OUT, T_OUT);
 	Monitor				MTR(HEATER, SPRINKLER, M_OUT, T_OUT);
 	
@@ -36,10 +36,11 @@ behavior Main
 	{
 		par {
 			STM.main();
-			PE.main();
+			CONT.main();
 			MTR.main();			
 		}
 
 		return 0;
 	}
 };
+
