@@ -9,7 +9,6 @@
 #include <string.h>
 
 import "Read_Settings";
-import "Clock";
 import "Process_Temperature";
 import "Process_Moisture";
 

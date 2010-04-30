@@ -21,33 +21,37 @@ import "i_receiver";
 #define SIZE 30
 #define N 8
 
-behavior temp_receiver(i_receiver temp, char *data){
+behavior temp_receiver(i_receiver temp){
 
 	void main(){
+		int data;
 		temp.receive(data, SIZE);
 	}
 
 };
 
-behavior moisture_receiver(i_receiver moisture, char *data){
+behavior moisture_receiver(i_receiver moisture){
 
 	void main(){
+		int data;
 		moisture.receive(data, SIZE);
 	}
 
 };
 
-behavior Heater_Flag(i_receiver Heater, char *data){
+behavior Heater_Flag(i_receiver Heater){
 
 	void main(){
+		int data;
 		Heater.receive(data, SIZE);
 	}
 
 };
 
-behavior Sprinkler_Flag(i_receiver Sprinkler, char *data){
+behavior Sprinkler_Flag(i_receiver Sprinkler){
 
 	void main(){
+		int data;
 		Sprinkler.receive(data, SIZE);
 	}
 
@@ -57,10 +61,8 @@ behavior Sprinkler_Flag(i_receiver Sprinkler, char *data){
 
 behavior Monitor(i_receiver HEATER, i_receiver SPRINKLER, i_receiver M_OUT, i_receiver T_OUT)
 {
-  void main(void)
-  {
   
-  	FILE *fp;
+	FILE *fp;
   	 
     char name[] = "Results.txt";
     char Tdata[SIZE];
@@ -74,19 +76,19 @@ behavior Monitor(i_receiver HEATER, i_receiver SPRINKLER, i_receiver M_OUT, i_re
     unsigned int heat;
     unsigned int sprink;
     
-    temp_receiver		readTemp(H_OUT, Tdata);
-    moisture_receiver	readMoisture(H_OUT, Mdata);
-    Heater_Flag			readHeater(HEATER, Hdata);
-    Sprinkler_Flag		readSprinkler(SPRINKLER, Sdata);
-	
-    printf("\nStarting Monitor");
-        
-    par{
-    	readTemp.main();
-    	readMoisture.main();
-    	readHeater.main();
-    	readSprinkler.main();
-    }
+    temp_receiver readTemp(T_OUT);
+    moisture_receiver readMoisture(M_OUT);
+    Heater_Flag readHeater(HEATER);
+    Sprinkler_Flag readSprinkler(SPRINKLER);
+
+ 	void main(void)
+ 	{
+    		par{
+    			readTemp.main();
+    			readMoisture.main();
+    			readHeater.main();
+    			readSprinkler.main();
+  		}
     
     if((fp = fopen(name, "w")) == NULL)
     {

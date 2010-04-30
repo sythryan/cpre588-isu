@@ -13,8 +13,8 @@ import "i_receiver";
 
 behavior tempprocessing(i_receiver tempsettingsin, i_receiver tempdatain, i_sender tempdatacontrol, i_sender tempdataout)
 {
-
 	double h;
+	int AVG_TEMP, DEVIATION;
 
 	void main(void) {
 	
@@ -26,4 +26,3 @@ behavior tempprocessing(i_receiver tempsettingsin, i_receiver tempdatain, i_send
 	}
 
 };
-
