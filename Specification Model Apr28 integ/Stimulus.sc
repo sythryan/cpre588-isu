@@ -44,7 +44,7 @@ behavior MoistSense(i_sender MSENSE){
 
 	void main(){
 	
-	int i;
+	int i, data;
 	FILE *fp;
 	
 		if((fp = fopen("Canned_moist.txt", "r")) != NULL)
@@ -62,6 +62,8 @@ behavior MoistSense(i_sender MSENSE){
 };
 
 behavior UserEntry(i_sender USERSET){
+
+	int data;
 
 	void main(){
 		//unsigned
