@@ -20,7 +20,7 @@ behavior Process_Moisture(i_receiver moistsettingsin, i_receiver moistdatain,
 i_sender sprinklercontrolout, i_sender moistdataout)
 {
 
-const unsigned long SIZE = 10;
+  const unsigned long SIZE = 10;
 
 	c_queue CC1((SIZE));
 	

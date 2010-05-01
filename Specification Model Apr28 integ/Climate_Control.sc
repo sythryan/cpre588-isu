@@ -13,10 +13,8 @@ import "Process_Temperature";
 import "Process_Moisture";
 
 
-behavior Climate_Control(i_receiver settingsin, 
-i_receiver tempin, i_receiver moisturein,
- i_sender heatcontrolout, i_sender sprinklercontrolout, 
- i_sender tempout, i_sender moistureout)
+behavior Climate_Control(i_receiver settingsin, i_receiver tempin, i_receiver moisturein,
+ i_sender heatcontrolout, i_sender sprinklercontrolout,  i_sender tempout, i_sender moistureout)
 {
 	const unsigned long SIZE = 10;
 	
