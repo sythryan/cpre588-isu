@@ -10,113 +10,97 @@
 #include <string.h>
 #include <sim.sh>
 
-#define SIZE 30
-#define STRING_SIZE 2
-
 import "c_queue";
 
 
-behavior TempSense(i_sender TSENSE){
+static  int cannedTemp[30] = 
+{65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 
+ 75, 76, 77, 78, 79, 80, 79, 78, 80, 81, 
+ 82, 83, 82, 81, 80, 79, 79, 78, 79, 79};
+ 
+static  int cannedMoist[30] = 
+{65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 
+ 75, 76, 77, 78, 79, 80, 79, 78, 80, 81, 
+ 82, 83, 82, 81, 80, 79, 79, 78, 79, 79};  // update to realistic values
 
-	void main(){
-	
-		int i;
-		FILE *fp;
-		//unsigned 
-		char dataT[SIZE];
-		
-		if((fp = fopen("Canned_temp.txt", "r")) != NULL)
-     	{
-     		printf("\nFile Found!");
-      	
-     		for(i=0; i<SIZE; i++)
-     		{
-     			fgets(dataT, STRING_SIZE, fp);
-     			TSENSE.send(dataT,STRING_SIZE);
-      		}
+#define FILE_SIZE 30
+#define STRING_SIZE 2
+
+
+
+behavior TempSense(i_sender TSENSE)
+{ 
+	void main()
+	{    	
+    int i;
+    
+   		for(i=0; i<FILE_SIZE; i++)
+   		{
+   			TSENSE.send(cannedTemp[i],STRING_SIZE); 
      	}
-     	fclose(fp);
-	}
-
+  }
 };
 
 behavior MoistSense(i_sender MSENSE){
 
-	void main(){
-	
-	int i, data;
-	FILE *fp;
-	
-		if((fp = fopen("Canned_moist.txt", "r")) != NULL)
-     	{
-     		printf("\nFile Found!");
-      	
-     		for(i=0; i<SIZE; i++)
-     		{
-     			fgets(data, STRING_SIZE, fp);
-     			MSENSE.send(data,STRING_SIZE);
-      		}
+	void main()
+	{    	
+    int i;
+   		for(i=0; i<FILE_SIZE; i++)
+   		{
+   			MSENSE.send(cannedMoist[i],STRING_SIZE); 
      	}
-     	fclose(fp);
-	}
+  }	
 };
 
 behavior UserEntry(i_sender USERSET){
 
-	int data;
-
 	void main(){
-		//unsigned
-		 char cmpBuf[] = "exit";
-    	//unsigned 
+		
+		  char cmpBuf[] = "exit";
     	char cmpTemp[] = "Temp";
-    	//unsigned 
     	char cmpMoist[] = "Moist";
-    	//unsigned 
-    	char function[40];
+    	char function[40]; // make big enough to avoid overflow
+    	char data[40]; 
+    	int convertedData;
     	 
     	printf("\n--****--Climate Control--****--");
      	printf("\n-------------------------------");
      	printf("\n\nMoisture Level (Moist) Temperature Level (Temp) or (exit) to quit program: ");
-     	gets(function);
+     	fgets(function, sizeof(function), stdin);
+
      	//********** Exit ********** 
      	if (!(strcmp(function,cmpBuf))) {
 			printf("Simulation Finished Successfuly!\n");
 			exit(0);
      	}   
+
      	if(!(strcmp(function, cmpTemp)))
      	{
 	      	printf("\n\n\n\nEnter your desired temperature: ");
-      		gets(data);
+      		fgets(data, sizeof(data), stdin);
      	}
+
      	if(!(strcmp(function, cmpMoist)))
      	{
 	     	printf("\n\n\n\nEnter your desired humidity: ");
-   			gets(data);
+   			fgets(data, sizeof(data), stdin);
      	}
-     	USERSET.send(data, SIZE);
+     	sscanf(data, "%d", &convertedData);
+     	USERSET.send(convertedData, sizeof(convertedData));
     }
 };
 
 behavior Stimulus(i_sender USER_SET, i_sender M_SENSE, i_sender T_SENSE)
-{
-  
-    //unsigned
-     char T_data[SIZE];
-    //unsigned 
-    char M_data[SIZE];
-    //unsigned 
-    char U_data[SIZE];
-    
-    TempSense	TTSense(T_SENSE);
-  	MoistSense	MSense(M_SENSE);
-	UserEntry	User(USER_SET);
+{    
+  TempSense	  TTSense(T_SENSE);
+  MoistSense	MSense(M_SENSE);
+	UserEntry	  User(USER_SET);
 
 	void main(void)
   {
-
-	par{
-		User.main();
+	  par{
+		  User.main();
      	TTSense.main();
      	MSense.main();
      }

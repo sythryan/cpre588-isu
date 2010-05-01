@@ -8,13 +8,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sim.sh>
+
 import "constant.sh";
 import "i_receiver";
 import "i_sender";
 
 behavior Read_Settings(i_receiver settingsin, i_sender tempsetout, i_sender moisturesetout)
 {
-	double tSetting, mSetting;
+	int tSetting, mSetting;
 	
 	void main(void) {
 		
@@ -24,7 +26,7 @@ behavior Read_Settings(i_receiver settingsin, i_sender tempsetout, i_sender mois
 		tempsetout.send(&tSetting, sizeof(tSetting));
 		moisturesetout.send(&mSetting, sizeof(mSetting));
 		
-		waitfor 1.0;
+		waitfor 1;
 
 	}
 };

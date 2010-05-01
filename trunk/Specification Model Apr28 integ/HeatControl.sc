@@ -19,10 +19,12 @@ behavior heatcontrol(i_receiver tempdatain, i_sender heatcontrolout)
 {
 	int h;
 
-	void main(void) {
-		tempdatain.receive(&h, sizeof(h));
+	void main(void) 
+	{
 		while(1)
 		{
+		  tempdatain.receive(&h, sizeof(h));
+		  
 			if ( h == 0)
 				heatcontrolout.send(0,1);
 			else
