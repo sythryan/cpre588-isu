@@ -15,60 +15,41 @@ import "c_queue";
 #define FILE_SIZE 30
 #define STRING_SIZE 2
 
-static  char cannedTemp[30][STRING_SIZE] = 
-{{'6', '5'},{'6', '5'},{'6', '5'},{'6', '5'},{'6', '5'},
- {'6', '5'},{'6', '5'},{'6', '5'},{'6', '5'},{'6', '5'},
- {'6', '5'},{'6', '5'},{'6', '5'},{'6', '5'},{'6', '5'},
- {'6', '5'},{'6', '5'},{'6', '5'},{'6', '5'},{'6', '5'},
- {'6', '5'},{'6', '5'},{'6', '5'},{'6', '5'},{'6', '5'},
- {'6', '5'},{'6', '5'},{'6', '5'},{'6', '5'},{'6', '5'},};
-
-static  int cannedMoist[30] = 
-{65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 
- 75, 76, 77, 78, 79, 80, 79, 78, 80, 81, 
- 82, 83, 82, 81, 80, 79, 79, 78, 79, 79};  // update to realistic values
-
-
 behavior TempSense(i_sender TSENSE)
 { 
 	void main()
 	{    	
-		unsigned int i;
-		char dataC[STRING_SIZE];
-    
-   		for(i=0; i<FILE_SIZE; i++)
-   		{
-   		dataC[0] = cannedTemp[i][0]; 
-   		dataC[1] = cannedTemp[i][1];
-			 TSENSE.send(&dataC,sizeof(STRING_SIZE));
-     	}
+		FILE *f1;
+		char temp[3];
+		unsigned int count = 0;
+
+		f1 = fopen("tempin.txt","r");
+
+		while (fgets(temp,3,f1) != NULL) {
+			TSENSE.send(&temp,sizeof(temp));
+			count ++;
+		}
+		fclose(f1);
  	}
 };
 
 behavior MoistSense(i_sender MSENSE){
 
-	void main(){
-	
-		int i;
-		FILE *fp;
-		char dataM[STRING_SIZE];
-		
-		if((fp = fopen("cannedMois.txt", "r")) != NULL)
-     	{
-     		printf("\nFile Found!");
-      	
-     		for(i=0; i<FILE_SIZE; i++)
-     		{
-     			fscanf(fp, "STRING_SIZE%c", dataM);
-     			MSENSE.send(dataM,STRING_SIZE);
-      		}
-     	}
-     	fclose(fp);
+	void main()
+	{
+		FILE *f1;
+		char moist[3];
+		unsigned int count = 0;
+
+		f1 = fopen("moistin.txt","r");
+
+		while (fgets(moist,3,f1) != NULL) {
+			MSENSE.send(&moist,sizeof(moist));
+			count ++;
+		}
+		fclose(f1);
 	}
-
 };
-
-
 
 behavior UserEntry(i_sender USERSET){
 
@@ -89,7 +70,6 @@ behavior UserEntry(i_sender USERSET){
 	printf("\n\nEnter Temperature Level (Temp): ");
 	fgets(tempdata, sizeof(tempdata), stdin);
 	sscanf(tempdata, "%d", &convertedtempdata);
-	printf("Temp Data Entered: %i\n",convertedtempdata);
 	USERSET.send(&convertedtempdata, sizeof(convertedtempdata));
 
 	printf("\n\nEnter Moisture Level (Moist): ");
