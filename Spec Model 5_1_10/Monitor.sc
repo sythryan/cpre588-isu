@@ -1,6 +1,6 @@
 /****************************************************************************
 *  Title: Monitor.sc
-*  Author: Daniel Zundel
+*  Author: Daniel Zundel, Brandon Tomlinson, Heather Garnell
 *  Date: 04/19/2010
 *  Description: Displays the results of our Climate Controller
 ****************************************************************************/
@@ -11,11 +11,9 @@
 #include <sim.sh>
 
 import "c_queue";
-import "i_receiver";
 
 #define SIZE 30
 #define N 8
-
 #define STRING_SIZE 2
 
 behavior temp_receiver(i_receiver temp){
@@ -68,8 +66,12 @@ behavior Heater_Flag(i_receiver Heater){
 		f1 = fopen("heaterout.txt","w");
 
 		while(count<=29) {
-			Heater.receive(&data, sizeof(data));
-			fprintf(f1,"%i\n", data);
+			Heater.receive(&data, sizeof(data));	
+			printf("Heat Control: %i\n",data);
+			if ( data = 1 )
+			  fprintf(f1,"Heater On\n");
+			else
+			  fprintf(f1,"Heater Off\n");
 			count = count++;
 		}
 		fclose(f1);
@@ -89,7 +91,10 @@ behavior Sprinkler_Flag(i_receiver Sprinkler){
 
 		while(count<=29) {
 			Sprinkler.receive(&data, sizeof(data));
-			fprintf(f1,"%i\n", data);
+			if ( data = 1 )
+			  fprintf(f1,"Sprinker On\n");
+			else
+			  fprintf(f1,"Sprinkler Off\n");
 			count = count++;
 		}
 		fclose(f1);
