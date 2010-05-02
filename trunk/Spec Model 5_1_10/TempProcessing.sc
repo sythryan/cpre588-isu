@@ -14,24 +14,25 @@ import "i_receiver";
 
 behavior tempprocessing(i_receiver tempsettingsin, i_receiver tempdatain, i_sender tempdatacontrol, i_sender tempdataout)
 {
-	int h;
-	unsigned int command;
-	int tempset;
 
 	void main(void) {
+		char h[3];
+		int command, h1, tempset;
+
 		tempsettingsin.receive(&tempset, sizeof(tempset));
 		printf("Temp Setting: %i\n",tempset);
 		while(1) {
 			tempdatain.receive(&h, sizeof(h));
-			printf("TempIn: %i\n",h);
+			sscanf(h, "%d", &h1);
+			tempdataout.send(&h1, sizeof(h1));
+			printf("TempIn: %u\n",h1);
 		
-			if ((h - tempset) >( - DEVIATION ))
+			if ((h1 - tempset) >( - DEVIATION ))
 				command = 1;
 			else
 				command = 0;
 
 			tempdatacontrol.send(&command, sizeof(command));
-			h = 0;
 		}
 	}
 

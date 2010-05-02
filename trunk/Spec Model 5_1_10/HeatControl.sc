@@ -17,20 +17,19 @@ import "i_receiver";
 
 behavior heatcontrol(i_receiver tempdatain, i_sender heatcontrolout)
 {
-	unsigned int h, command;
-
 	void main(void) 
 	{
+		int h, command;
+
 		while(1)
 		{
-		  tempdatain.receive(&h, sizeof(h));
-		  
-			if ( h == 0)
+			tempdatain.receive(&h, sizeof(h));
+			if (h == 0)
 				command = 1;
 			else
 				command = 0;
-
-				heatcontrolout.send(&command, sizeof(command)); //don't turn on
+			waitfor(10);
+			heatcontrolout.send(&command, sizeof(command));
 		}
 	}
 

@@ -17,8 +17,7 @@ import "c_queue";
 
 behavior Process_Temperature(i_receiver tempsettingsin, i_receiver tempdatain, i_sender heatcontrolout, i_sender tempdataout)
 {
-
-const unsigned long SIZE = 10;
+	const unsigned long SIZE = 10;
 	c_queue C1((SIZE));
 	
 	tempprocessing P(tempsettingsin, tempdatain, C1, tempdataout);
@@ -32,4 +31,3 @@ const unsigned long SIZE = 10;
 
 	}
 };
-

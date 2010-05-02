@@ -12,12 +12,19 @@ import "i_receiver";
 
 behavior sprinklercontrol(i_receiver moistdatain, i_sender sprinklercontrolout)
 {
-  	//double m; 
-  	//double out;	
-  	
 	void main(void) {		
-    
-    //moistdatain.receive(&m, sizeof(double));
+		int h, command;
+
+		while(1)
+		{
+			moistdatain.receive(&h, sizeof(h));
+			if (h == 0)
+				command = 1;
+			else
+				command = 0;
+			waitfor(10);
+			sprinklercontrolout.send(&command, sizeof(command));
+		}
      }
 };
 

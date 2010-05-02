@@ -12,12 +12,12 @@ import "Read_Settings";
 import "Process_Temperature";
 import "Process_Moisture";
 
-
 behavior Climate_Control(i_receiver settingsin, i_receiver tempin, i_receiver moisturein,
  i_sender heatcontrolout, i_sender sprinklercontrolout,  i_sender tempout, i_sender moistureout)
-{
+{	
+
 	const unsigned long SIZE = 10;
-	
+
 	c_queue Moistclockdata((SIZE));
 	c_queue Moisturesetin((SIZE)); 
 	c_queue Tempsetin((SIZE));
