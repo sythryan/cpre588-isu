@@ -12,58 +12,72 @@
 
 import "c_queue";
 
-static  char cannedTemp[30] = 
-{65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 
- 75, 76, 77, 78, 79, 80, 79, 78, 80, 81, 
- 82, 83, 82, 81, 80, 79, 79, 78, 79, 79};
- 
-static  char cannedMoist[30] = 
+#define FILE_SIZE 30
+#define STRING_SIZE 2
+
+static  char cannedTemp[30][STRING_SIZE] = 
+{{'6', '5'},{'6', '5'},{'6', '5'},{'6', '5'},{'6', '5'},
+ {'6', '5'},{'6', '5'},{'6', '5'},{'6', '5'},{'6', '5'},
+ {'6', '5'},{'6', '5'},{'6', '5'},{'6', '5'},{'6', '5'},
+ {'6', '5'},{'6', '5'},{'6', '5'},{'6', '5'},{'6', '5'},
+ {'6', '5'},{'6', '5'},{'6', '5'},{'6', '5'},{'6', '5'},
+ {'6', '5'},{'6', '5'},{'6', '5'},{'6', '5'},{'6', '5'},};
+
+static  int cannedMoist[30] = 
 {65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 
  75, 76, 77, 78, 79, 80, 79, 78, 80, 81, 
  82, 83, 82, 81, 80, 79, 79, 78, 79, 79};  // update to realistic values
 
-#define FILE_SIZE 30
-#define STRING_SIZE 2
 
 behavior TempSense(i_sender TSENSE)
 { 
 	void main()
 	{    	
 		unsigned int i;
-		int convertedData;
+		char dataC[STRING_SIZE];
     
    		for(i=0; i<FILE_SIZE; i++)
    		{
-			sscanf(cannedTemp[i], "%d", &convertedData);
-   			TSENSE.send(&convertedData,sizeof(STRING_SIZE));
-			convertedData = 0;
-     		}
+   		dataC[0] = cannedTemp[i][0]; 
+   		dataC[1] = cannedTemp[i][1];
+			 TSENSE.send(&dataC,sizeof(STRING_SIZE));
+     	}
  	}
 };
 
 behavior MoistSense(i_sender MSENSE){
 
-	void main()
-	{    	
-		unsigned int i;
-		int convertedData;
-
-   		for(i=0; i<FILE_SIZE; i++)
-   		{
-			sscanf(cannedMoist[i], "%d", &convertedData);
-   			MSENSE.send(&convertedData,sizeof(STRING_SIZE)); 
+	void main(){
+	
+		int i;
+		FILE *fp;
+		char dataM[STRING_SIZE];
+		
+		if((fp = fopen("cannedMois.txt", "r")) != NULL)
+     	{
+     		printf("\nFile Found!");
+      	
+     		for(i=0; i<FILE_SIZE; i++)
+     		{
+     			fscanf(fp, "STRING_SIZE%c", dataM);
+     			MSENSE.send(dataM,STRING_SIZE);
+      		}
      	}
-  }	
+     	fclose(fp);
+	}
+
 };
+
+
 
 behavior UserEntry(i_sender USERSET){
 
 	void main(){
 		
-	char cmpBuf[] = "exit";
-    	char cmpTemp[] = "Temp";
-    	char cmpMoist[] = "Moist";
-    	char function[40]; // make big enough to avoid overflow
+	//char cmpBuf[] = "exit";
+  // 	char cmpTemp[] = "Temp";
+   // 	char cmpMoist[] = "Moist";
+    //	char function[40]; // make big enough to avoid overflow
     	char tempdata[40];
 	char moistdata[40];
     	int convertedtempdata;
@@ -71,6 +85,7 @@ behavior UserEntry(i_sender USERSET){
     	 
     	printf("\n--****--Climate Control--****--");
      	printf("\n-------------------------------");
+     	
 	printf("\n\nEnter Temperature Level (Temp): ");
 	fgets(tempdata, sizeof(tempdata), stdin);
 	sscanf(tempdata, "%d", &convertedtempdata);
