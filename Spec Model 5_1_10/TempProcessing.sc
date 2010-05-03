@@ -15,15 +15,16 @@ import "i_receiver";
 behavior tempprocessing(i_receiver tempsettingsin, i_receiver tempdatain, i_sender tempdatacontrol, i_sender tempdataout)
 {
 
-	void main(void) {
-		char h[3];
+	void main(void) 
+	{
 		int command, h1, tempset;
 
 		tempsettingsin.receive(&tempset, sizeof(tempset));
 		printf("Temp Setting: %i\n",tempset);
-		while(1) {
-			tempdatain.receive(&h, sizeof(h));
-			sscanf(h, "%d", &h1);
+		
+		while(1) 
+		{
+			tempdatain.receive(&h1, sizeof(h1));
 			tempdataout.send(&h1, sizeof(h1));
 			printf("TempIn: %u\n",h1);
 		

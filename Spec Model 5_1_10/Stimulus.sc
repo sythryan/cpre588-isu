@@ -20,13 +20,16 @@ behavior TempSense(i_sender TSENSE)
 	void main()
 	{    	
 		FILE *f1;
-		char temp[3];
-
+    int t1 = 0;
+    
 		f1 = fopen("tempin.txt","r");
 
-		while (fgets(temp,3,f1) != NULL) {
-			TSENSE.send(&temp,sizeof(temp));
+		while (! feof(f1) ) 
+		{
+		   fscanf(f1, "%d", &t1);  	
+			 TSENSE.send(&t1,sizeof(t1));			
 		}
+
 		fclose(f1);
  	}
 };

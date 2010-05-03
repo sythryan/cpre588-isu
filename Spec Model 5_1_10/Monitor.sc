@@ -29,7 +29,7 @@ behavior temp_receiver(i_receiver temp){
 		while(count<=29) {
 			temp.receive(&data, sizeof(data));
 			fprintf(f1,"%i\n", data);
-			count = count++;
+			count++;
 		}
 		fclose(f1);
 		exit(0);
@@ -48,7 +48,7 @@ behavior moisture_receiver(i_receiver moisture){
 		while(count<=29) {
 			moisture.receive(&data, sizeof(data));
 			fprintf(f1,"%i\n", data);
-			count = count++;
+			count++;
 		}
 		fclose(f1);
 		exit(0);
@@ -68,11 +68,11 @@ behavior Heater_Flag(i_receiver Heater){
 		while(count<=29) {
 			Heater.receive(&data, sizeof(data));	
 			printf("Heat Control: %i\n",data);
-			if ( data = 1 )
+			if ( data == 1 )
 			  fprintf(f1,"Heater On\n");
 			else
 			  fprintf(f1,"Heater Off\n");
-			count = count++;
+			count++;
 		}
 		fclose(f1);
 		exit(0);
@@ -91,11 +91,11 @@ behavior Sprinkler_Flag(i_receiver Sprinkler){
 
 		while(count<=29) {
 			Sprinkler.receive(&data, sizeof(data));
-			if ( data = 1 )
+			if ( data == 1 )
 			  fprintf(f1,"Sprinker On\n");
 			else
 			  fprintf(f1,"Sprinkler Off\n");
-			count = count++;
+			count++;
 		}
 		fclose(f1);
 		exit(0);
