@@ -20,7 +20,7 @@ behavior TempSense(i_sender TSENSE)
 	void main()
 	{    	
 		FILE *f1;
-    int t1 = 0;
+    		int t1 = 0;
     
 		f1 = fopen("tempin.txt","r");
 
