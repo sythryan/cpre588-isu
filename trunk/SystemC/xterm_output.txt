@@ -1,0 +1,37 @@
+
+--****--Climate Control--****--
+-------------------------------
+
+Enter Desired Temperature Level (Temp): 
+Received Desired Temp: 78. 
+
+MONITOR    Current Sensor Temperature: 65,  Heater: On 
+MONITOR    Current Sensor Temperature: 66,  Heater: On 
+MONITOR    Current Sensor Temperature: 67,  Heater: On 
+MONITOR    Current Sensor Temperature: 68,  Heater: On 
+MONITOR    Current Sensor Temperature: 69,  Heater: On 
+MONITOR    Current Sensor Temperature: 70,  Heater: On 
+MONITOR    Current Sensor Temperature: 71,  Heater: On 
+MONITOR    Current Sensor Temperature: 72,  Heater: On 
+MONITOR    Current Sensor Temperature: 73,  Heater: On 
+MONITOR    Current Sensor Temperature: 74,  Heater: On 
+MONITOR    Current Sensor Temperature: 75,  Heater: On 
+MONITOR    Current Sensor Temperature: 76,  Heater: On 
+MONITOR    Current Sensor Temperature: 77,  Heater: On 
+MONITOR    Current Sensor Temperature: 78,  Heater: On 
+MONITOR    Current Sensor Temperature: 79,  Heater: Off 
+MONITOR    Current Sensor Temperature: 80,  Heater: Off 
+MONITOR    Current Sensor Temperature: 79,  Heater: Off 
+MONITOR    Current Sensor Temperature: 78,  Heater: On 
+MONITOR    Current Sensor Temperature: 80,  Heater: Off 
+MONITOR    Current Sensor Temperature: 81,  Heater: Off 
+MONITOR    Current Sensor Temperature: 82,  Heater: Off 
+MONITOR    Current Sensor Temperature: 83,  Heater: Off 
+MONITOR    Current Sensor Temperature: 82,  Heater: Off 
+MONITOR    Current Sensor Temperature: 81,  Heater: Off 
+MONITOR    Current Sensor Temperature: 80,  Heater: Off 
+MONITOR    Current Sensor Temperature: 79,  Heater: Off 
+MONITOR    Current Sensor Temperature: 78,  Heater: On 
+MONITOR    Current Sensor Temperature: 77,  Heater: On 
+MONITOR    Current Sensor Temperature: 76,  Heater: On 
+MONITOR    Current Sensor Temperature: 75,  Heater: On 
