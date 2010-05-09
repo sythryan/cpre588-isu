@@ -1,21 +1,24 @@
 /****************************************************************************
 *  Title: tb.sc
-*  Author: Brandon Tomlinson
-*  Date: 5/5/2010
-*  Description: Testbench for IP
+*  Author: Daniel Zundel
+*  Date: 04/19/2010
+*  Description: testbench for Climate Controller
 ****************************************************************************/
 
-import "i_sender";
-import "i_receiver";
 import "c_queue";
-import "Creative";
+
+import "Climate_Control";
 import "Stimulus";
 import "Monitor";
+import "i_sender";
+import "i_receiver";
 
 const unsigned long SIZE = 10;
+const unsigned long MSize = 10;
 
 behavior Main
 {
+	c_queue USER_SET((MSize));
 	c_queue M_SENSE((SIZE));
 	c_queue T_SENSE((SIZE));
 	c_queue HEATER((SIZE));
@@ -23,19 +26,19 @@ behavior Main
 	c_queue T_OUT((SIZE));
 	c_queue M_OUT((SIZE));
 
-	Stimulus STM(T_SENSE, M_SENSE);
-	ip IP(T_SENSE, M_SENSE, HEATER, SPRINKLER, T_OUT, M_OUT);
+	Stimulus STM(USER_SET, M_SENSE, T_SENSE);
+	Climate_Control CONT(USER_SET, T_SENSE, M_SENSE, HEATER, SPRINKLER, T_OUT, M_OUT);
 	Monitor MTR(HEATER, SPRINKLER, M_OUT, T_OUT);
+	
 
 	int main (void)
 	{
 		par {
 			STM.main();
-			IP.main();
+			CONT.main();
 			MTR.main();			
 		}
 		return (0);
 	}
 };
-
 

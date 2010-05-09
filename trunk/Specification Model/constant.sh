@@ -11,6 +11,4 @@
 #define AVG_TEMP 75.0
 #define AVG_MOISTURE 85.0
 
-#define DEVIATION1 2.0
-#define DEVIATION2 5.0
-#define DEVIATION3 10.0
+#define DEVIATION 1.0
