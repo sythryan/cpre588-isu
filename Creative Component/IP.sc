@@ -17,7 +17,7 @@ behavior IP(i_receiver tempdatain, i_receiver moistdatain, i_sender heatcontrolo
 {
 
 	void main(void) {
-		int command, h1, h2, tempest, moistest, diff, RH, shouldRH;
+		int tempcommand, moistcommand, h1, h2, tempest, moistest, diff, RH, shouldRH, control, prevvaltemp, prevvalmoist, x;
 
 		while(1) 
 		{
@@ -129,15 +129,33 @@ behavior IP(i_receiver tempdatain, i_receiver moistdatain, i_sender heatcontrolo
 			elseif (h1 >=80 & h1 < 89)
 				shouldRH = 95;
 		
-			if (abs(shouldRH - RH) > DEVIATION)
-				command = 1;// turn on 
-				command1 = 1;//turn on sprinkler
-			else
-				command = 0;
-				command1 = 0;
+			if ((shouldRH - RH) < DEVIATION1)
+				control = 0;//do nothing
+			elseif ((shouldRH - RH) > DEVIATION1 & (shouldRH - RH) < DEVIATION2)
+				control = 1, x = 10;// turn on sprinkler
+			elseif((shouldRH - RH) > DEVIATION2 & (shouldRH - RH) < DEVIATION3)
+				control = 2, x = 10;//turn on heater and sprinkler
+			elseif((shouldRH - RH) > DEVIATION3)
+				control = 3, x = 20;//turn on heater and sprinkler
 
-			heatcontrolout.send(&command, sizeof(command));
-			sprinklercontrolout.send(&command1, sizeof(command1));
+
+			if (control == 0)
+				tempcommand = 0, moistcommand = 0;
+			elseif (control == 1)
+				tempcommand = 0, moistcommand = 1;
+			elseif (control == 2)
+				tempcommand = 1, moistcommand = 1;
+			elseif (control == 3)
+				tempcommand = 1, moistcommand = 1;
+
+			if (prevvaltemp != tempcommand)
+				heatcontrolout.send(&tempcommand, sizeof(tempcommand)), waitfor(x);
+
+			if (prevvalmoist != moistcommand)
+				sprinklercontrolout.send(&moistcommand, sizeof(moistcommand)), waitfor(x);
+
+			prevvaltemp = tempcommand;
+			prevvalmoist = moistcommand;
 		}
 	}
 };

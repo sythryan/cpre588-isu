@@ -2,7 +2,7 @@
 *  Title: Monitor.sc
 *  Author: Daniel Zundel, Brandon Tomlinson, Heather Garnell
 *  Date: 04/19/2010
-*  Description: IP Monitor for Testbench
+*  Description: Displays the results of our Climate Controller
 ****************************************************************************/
 
 #include <stdio.h>
@@ -67,12 +67,10 @@ behavior Heater_Flag(i_receiver Heater){
 
 		while(count<=29) {
 			Heater.receive(&data, sizeof(data));
-			if (data == 0)
-			  fprintf(f1,"Heater Off\n");
-			else if (data == 1)
+			if ( data == 1 )
 			  fprintf(f1,"Heater On\n");
 			else
-			  fprintf(f1,"No Change\n");
+			  fprintf(f1,"Heater Off\n");
 			count++;
 		}
 		fclose(f1);
@@ -92,12 +90,10 @@ behavior Sprinkler_Flag(i_receiver Sprinkler){
 
 		while(count<=29) {
 			Sprinkler.receive(&data, sizeof(data));
-			if ( data == 0 )
-			  fprintf(f1,"Sprinker Off\n");
-			else if (data == 1)
-			  fprintf(f1,"Sprinkler On\n");
+			if ( data == 1 )
+			  fprintf(f1,"Sprinker On\n");
 			else
-			  fprintf(f1,"No Change\n");
+			  fprintf(f1,"Sprinkler Off\n");
 			count++;
 		}
 		fclose(f1);
@@ -130,4 +126,3 @@ behavior Monitor(i_receiver HEATER, i_receiver SPRINKLER, i_receiver M_OUT, i_re
   		}
   }
 };
-
