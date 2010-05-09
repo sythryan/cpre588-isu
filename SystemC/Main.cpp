@@ -32,12 +32,8 @@ void HeaterControl::update()
   bool flag;
   while(1)
   {
-      flag = HCFlag.read();
-   
-			if (flag)   printf("HC Read: On \n");
-			else  		  printf("HC Read: Off \n");   
-			  
-			//waitfor(10);
+      flag = HCFlag.read();  
+			wait(10, SC_NS);
 			OHeaterOn.write(flag);
   }
 }
@@ -49,8 +45,9 @@ void HeaterControl::update()
 //------------------------------------------------------------
 SC_MODULE(TempProcessing)
 {	
-  sc_fifo_in < int> Sensor_T, Desired_T;
-  sc_fifo_out<bool> TPFlag;
+  sc_fifo_in<int > Sensor_T, Desired_T;
+  sc_fifo_out<bool > TPFlag;
+  sc_fifo_out<int > TPPassthru;
   
   void update();
 
@@ -69,9 +66,12 @@ void TempProcessing::update()
   while(1)
   {
     temp = Sensor_T.read();
-    printf("TP read sensor temp: %d. \n", temp);
+    //printf("TP read sensor temp: %d. \n", temp);
+    TPPassthru.write(temp);
     
-    if (temp  > (DESIRED-5))    TPFlag.write(true);
+		wait(10, SC_NS);
+    
+    if (temp  < (DESIRED+1))    TPFlag.write(true);
     else                        TPFlag.write(false);         
   }
 }
@@ -82,7 +82,7 @@ void TempProcessing::update()
 //------------------------------------------------------------
 SC_MODULE (Design_PT)
 {
-  sc_fifo <bool> CTRLFLAG;
+  sc_fifo <bool> *CTRLFLAG;
   
   sc_fifo_in<int > SensorT, DesiredT; 
   sc_fifo_out<bool > OFlag;
@@ -103,9 +103,12 @@ SC_MODULE (Design_PT)
     // Bind the ports
     TP->Sensor_T(SensorT); 
     TP->Desired_T(DesiredT); 
-    TP->OFlag(OFlag); 
-    OTPFlag(*CTRLFLAG);
-    IHCGlag(*CTRLFLAG);
+        
+    TP->TPFlag(*CTRLFLAG); // Pass control flag from TP->HC
+    HC->HCFlag(*CTRLFLAG);
+    
+    HC->OHeaterOn(OFlag);
+    TP->TPPassthru(OTPassthru);
 	}  
 };
 
@@ -190,26 +193,27 @@ void Test_Bench::Stimulus()
 void Test_Bench::Monitor()
 {		
 		FILE *f1, *f2;
-		int count=0;
-	  bool data, temp;
+		int count=0, temp=0;
+	  bool data=false;
 	  
-    if ( ((f1 = fopen("tempout.txt","w"))   == NULL)    || 
-         ((f2 = fopen("heaterout.txt","w")) == NULL) ) {
+    if ( ((f1 = fopen("heaterout.txt","w"))   == NULL)    || 
+         ((f2 = fopen("tempout.txt","w")) == NULL) ) {
                     printf("Error opening output file.\n"); 
                     exit(1); }
     else
     {
   		while(count<=29) 
   		{
-  			data = ITCTRL.read();
-  			if (data){  printf("Monitor - Heater Control: On.  ");
-  			            fprintf(f1,"Heater Control: On \n"); }
-  			else { 		  printf("Monitor - Heater Control: Off.  ");
-  			  	        fprintf(f1,"Heater Control: Off \n");}
-  			
+  		  
   			temp = ITPASSTHRU.read();
-  			printf(" Sensor Data: %d. \n", temp);
-  			fprintf(f2,"%i\n", temp); 
+  			printf("MONITOR    Current Sensor Temperature: %d,  ", temp);
+  			fprintf(f2,"Current Sensor Temperature: %i\n", temp); 
+  			
+  			data = ITCTRL.read();
+  			if (data){  printf("Heater: On \n");
+  			            fprintf(f1,"Heater: On \n"); }
+  			else { 		  printf("Heater: Off \n");
+  			  	        fprintf(f1,"Heater: Off \n");}
   			
   			count++;
   		}

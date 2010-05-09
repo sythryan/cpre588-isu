@@ -1,30 +1,30 @@
-Heater Control: Off 
-Heater Control: Off 
-Heater Control: Off 
-Heater Control: Off 
-Heater Control: Off 
-Heater Control: Off 
-Heater Control: Off 
-Heater Control: Off 
-Heater Control: Off 
-Heater Control: Off 
-Heater Control: Off 
-Heater Control: On 
-Heater Control: On 
-Heater Control: On 
-Heater Control: On 
-Heater Control: On 
-Heater Control: On 
-Heater Control: On 
-Heater Control: On 
-Heater Control: On 
-Heater Control: On 
-Heater Control: On 
-Heater Control: On 
-Heater Control: On 
-Heater Control: On 
-Heater Control: On 
-Heater Control: On 
-Heater Control: On 
-Heater Control: On 
-Heater Control: Off 
+Current Sensor Temperature: 65
+Current Sensor Temperature: 66
+Current Sensor Temperature: 67
+Current Sensor Temperature: 68
+Current Sensor Temperature: 69
+Current Sensor Temperature: 70
+Current Sensor Temperature: 71
+Current Sensor Temperature: 72
+Current Sensor Temperature: 73
+Current Sensor Temperature: 74
+Current Sensor Temperature: 75
+Current Sensor Temperature: 76
+Current Sensor Temperature: 77
+Current Sensor Temperature: 78
+Current Sensor Temperature: 79
+Current Sensor Temperature: 80
+Current Sensor Temperature: 79
+Current Sensor Temperature: 78
+Current Sensor Temperature: 80
+Current Sensor Temperature: 81
+Current Sensor Temperature: 82
+Current Sensor Temperature: 83
+Current Sensor Temperature: 82
+Current Sensor Temperature: 81
+Current Sensor Temperature: 80
+Current Sensor Temperature: 79
+Current Sensor Temperature: 78
+Current Sensor Temperature: 77
+Current Sensor Temperature: 76
+Current Sensor Temperature: 75
