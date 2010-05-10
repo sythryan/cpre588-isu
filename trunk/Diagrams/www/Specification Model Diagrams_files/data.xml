@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisioDocument>
+	<DocumentProperties>
+		<Title></Title>
+		<HyperlinkBase href=""></HyperlinkBase>
+	</DocumentProperties>
+	<Pages>
+		<Page ID="4" Name="Specification Diagram" NameU="Specification Diagram">
+			<Layer IX="0">
+				<Name>Connector</Name>
+				<NameUniv>Connector</NameUniv>
+				<Visible>1</Visible>
+			</Layer>
+			<Shapes>
+				<Shape ID="38" UniqueID="{344371CE-A142-49DD-AB9E-DB94F806990A}" Name="Sheet.38" NameU="Sheet.38">
+					<XForm>
+						<PinX Unit="IN">5.418750000000000</PinX>
+						<PinY Unit="IN">4.228125000000000</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="41" UniqueID="{1B42F91E-4D53-4E9F-B1B9-1CEA4E15BFFC}" Name="Sheet.41" NameU="Sheet.41">
+					<Text>Stimulus</Text>
+					<XForm>
+						<PinX Unit="IN">1.262500000000000</PinX>
+						<PinY Unit="IN">4.025000000000000</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="42" UniqueID="{6384DBFC-D954-4726-A934-30F9475BA0C3}" Name="Sheet.42" NameU="Sheet.42">
+					<Text>Project</Text>
+					<XForm>
+						<PinX Unit="IN">0.731250000000000</PinX>
+						<PinY Unit="IN">6.150000000000000</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="44" UniqueID="{E8919AE0-9F56-45E8-983D-70B243C86996}" Name="Sheet.44" NameU="Sheet.44">
+					<Text>Climate Control</Text>
+					<XForm>
+						<PinX Unit="IN">5.512500000000000</PinX>
+						<PinY Unit="IN">4.056250000000000</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="54" UniqueID="{1314585C-DA50-469C-A3BF-E6BD1835D36B}" Name="Sheet.54" NameU="Sheet.54">
+					<Text>Settings In</Text>
+					<XForm>
+						<PinX Unit="IN">2.401938472339523</PinX>
+						<PinY Unit="IN">3.665467908642241</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="62" UniqueID="{1EEA5E3B-2C24-436B-B2F2-EDC184AA977A}" Name="Sheet.62" NameU="Sheet.62">
+					<Text>Monitor</Text>
+					<XForm>
+						<PinX Unit="IN">9.762499999999999</PinX>
+						<PinY Unit="IN">4.056250000000000</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="63" UniqueID="{7D2D5241-8DFB-4560-B893-F64265F7CAE1}" Name="Sheet.63" NameU="Sheet.63">
+					<Text>Read Input Settings</Text>
+					<XForm>
+						<PinX Unit="IN">5.574999999999999</PinX>
+						<PinY Unit="IN">5.353125000000000</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="67" UniqueID="{56AD46FA-35F9-4D06-A8BF-2B82B9550D52}" Name="Sheet.67" NameU="Sheet.67">
+					<Text>Moisture Sensor</Text>
+					<XForm>
+						<PinX Unit="IN">1.253008177570093</PinX>
+						<PinY Unit="IN">3.165625000000000</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="68" UniqueID="{2F66F737-0FDA-4990-925C-D3D889AC3EA8}" Name="Sheet.68" NameU="Sheet.68">
+					<Text>Keypad Inputs (Temp/Moisture Settings)</Text>
+					<XForm>
+						<PinX Unit="IN">1.262500000000000</PinX>
+						<PinY Unit="IN">3.962500000000000</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="69" UniqueID="{CF58A689-D587-4F53-BD0F-4C96EFC327E6}" Name="Sheet.69" NameU="Sheet.69">
+					<Text>Temp Sensor</Text>
+					<XForm>
+						<PinX Unit="IN">1.240741822429906</PinX>
+						<PinY Unit="IN">2.665625000000000</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="79" UniqueID="{2AC40E59-8C95-48D0-9F14-250A22113C78}" Name="Sheet.79" NameU="Sheet.79">
+					<Text>Moisture In</Text>
+					<XForm>
+						<PinX Unit="IN">2.373061527660478</PinX>
+						<PinY Unit="IN">3.165782091357760</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="85" UniqueID="{8CCF894D-8254-448F-8E0B-4A8FB642A0F9}" Name="Sheet.85" NameU="Sheet.85">
+					<Text>Temp In</Text>
+					<XForm>
+						<PinX Unit="IN">2.401938472339523</PinX>
+						<PinY Unit="IN">2.728125000000000</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="91" UniqueID="{0C2D450B-78E7-4336-B08E-868E2B57D6E1}" Name="Sheet.91" NameU="Sheet.91">
+					<Text>Heater On/Off</Text>
+					<XForm>
+						<PinX Unit="IN">8.574999999999999</PinX>
+						<PinY Unit="IN">5.165782091357760</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="97" UniqueID="{74E44AA2-213B-45F5-9666-A827C8E9B6DE}" Name="Sheet.97" NameU="Sheet.97">
+					<Text>Sprinkler On/Off</Text>
+					<XForm>
+						<PinX Unit="IN">8.606249999999999</PinX>
+						<PinY Unit="IN">3.415467908642241</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="98" UniqueID="{F90E4901-145F-46AA-B9C6-07822B445F20}" Name="Sheet.98" NameU="Sheet.98">
+					<Text>Moisture Out</Text>
+					<XForm>
+						<PinX Unit="IN">8.574999999999999</PinX>
+						<PinY Unit="IN">2.915844486564001</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="104" UniqueID="{1E613709-DDFD-4883-BC81-1101BBE6E695}" Name="Sheet.104" NameU="Sheet.104">
+					<Text>Temp Out</Text>
+					<XForm>
+						<PinX Unit="IN">8.574999999999999</PinX>
+						<PinY Unit="IN">4.540844486564001</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="113" UniqueID="{08236E4B-C89D-46EF-AFD7-5C1F10468475}" Name="Sheet.113" NameU="Sheet.113">
+					<Text>Read Moist Data</Text>
+					<XForm>
+						<PinX Unit="IN">9.762499999999999</PinX>
+						<PinY Unit="IN">2.790625000000000</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="114" UniqueID="{75FBF067-4272-426C-A33C-21AE7CC9EB15}" Name="Sheet.114" NameU="Sheet.114">
+					<Text>Read Temp Data</Text>
+					<XForm>
+						<PinX Unit="IN">9.753008177570095</PinX>
+						<PinY Unit="IN">4.478125000000000</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="115" UniqueID="{3CA535C3-AD74-43D8-9305-2108CC5CBE03}" Name="Sheet.115" NameU="Sheet.115">
+					<Text>Sprinkler</Text>
+					<XForm>
+						<PinX Unit="IN">9.753008177570095</PinX>
+						<PinY Unit="IN">3.478125000000000</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="116" UniqueID="{3E463AE3-3B83-4762-B722-AD82D2E0D236}" Name="Sheet.116" NameU="Sheet.116">
+					<Text>Heater</Text>
+					<XForm>
+						<PinX Unit="IN">9.731249999999999</PinX>
+						<PinY Unit="IN">5.290625000000000</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="117" UniqueID="{38CCA5AC-00DA-4EB2-B7B7-4C02AE4639AC}" Name="Sheet.117" NameU="Sheet.117">
+					<XForm>
+						<PinX Unit="IN">6.012499999999998</PinX>
+						<PinY Unit="IN">2.946875000000000</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="119" UniqueID="{125D625D-EE5D-4498-BBE4-63D62D3238E3}" Name="Sheet.119" NameU="Sheet.119">
+					<Text>Moisture Processing</Text>
+					<XForm>
+						<PinX Unit="IN">4.700000000000001</PinX>
+						<PinY Unit="IN">2.868750000000000</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="121" UniqueID="{B69985E4-CFF7-4B5D-ACF0-698225D21D50}" Name="Sheet.121" NameU="Sheet.121">
+					<Text>Sprinkler Control</Text>
+					<XForm>
+						<PinX Unit="IN">6.739062499999999</PinX>
+						<PinY Unit="IN">2.931250000000000</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="122" UniqueID="{9FB03DFF-AD85-4A26-81B1-B7A53533E6FF}" Name="Sheet.122" NameU="Sheet.122">
+					<Text>Process Humidity</Text>
+					<XForm>
+						<PinX Unit="IN">6.012499999999998</PinX>
+						<PinY Unit="IN">2.946875000000000</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="123" UniqueID="{64EBC31E-7896-42C5-BB2E-64DF75737DF9}" Name="Sheet.123" NameU="Sheet.123">
+					<XForm>
+						<PinX Unit="IN">6.043749999999998</PinX>
+						<PinY Unit="IN">4.228125000000000</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="125" UniqueID="{27399794-A97A-4665-B10E-7F6022918FE8}" Name="Sheet.125" NameU="Sheet.125">
+					<Text>Temp.
+Processing</Text>
+					<XForm>
+						<PinX Unit="IN">4.825000000000001</PinX>
+						<PinY Unit="IN">4.118750000000000</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="127" UniqueID="{0F93CD3E-E618-4DFB-9CF6-EB1E4E830E41}" Name="Sheet.127" NameU="Sheet.127">
+					<Text>Heater Control</Text>
+					<XForm>
+						<PinX Unit="IN">6.825000000000001</PinX>
+						<PinY Unit="IN">4.181250000000000</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="128" UniqueID="{FEA3FA3B-0780-4A97-B7D4-D224CD741F2C}" Name="Sheet.128" NameU="Sheet.128">
+					<Text>Process Temperature</Text>
+					<XForm>
+						<PinX Unit="IN">6.043749999999998</PinX>
+						<PinY Unit="IN">4.228125000000000</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="129" UniqueID="{7DEE3FDD-3621-447F-AE89-95C09F2CFC68}" Name="Sheet.129" NameU="Sheet.129">
+					<XForm>
+						<PinX Unit="IN">5.715625000000001</PinX>
+						<PinY Unit="IN">4.978125000000000</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="130" UniqueID="{DB29EB35-A167-4AB3-BE14-73FA1E4AA5D8}" Name="Sheet.130" NameU="Sheet.130">
+					<XForm>
+						<PinX Unit="IN">5.575000000000000</PinX>
+						<PinY Unit="IN">4.978125000000000</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="131" UniqueID="{DF87AA77-47C0-46C6-8026-3B81C266BE09}" Name="Sheet.131" NameU="Sheet.131">
+					<XForm>
+						<PinX Unit="IN">4.356250000000000</PinX>
+						<PinY Unit="IN">4.134375000000000</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="132" UniqueID="{D9919089-8727-4F26-810D-64920085BA19}" Name="Dynamic connector" NameU="Dynamic connector" Master="3">
+					<XForm>
+						<PinX Unit="IN">4.356249999999999</PinX>
+						<PinY Unit="IN">4.134375000000000</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="134" UniqueID="{8CAD21C6-5FB7-4C2B-9244-8D99DC733817}" Name="Sheet.134" NameU="Sheet.134">
+					<Text>Temp Data</Text>
+					<XForm>
+						<PinX Unit="IN">5.875243832466332</PinX>
+						<PinY Unit="IN">4.165844486564001</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="140" UniqueID="{256C8BB5-1482-431A-97A6-70CE80F351D3}" Name="Sheet.140" NameU="Sheet.140">
+					<Text>Moisture Data</Text>
+					<XForm>
+						<PinX Unit="IN">5.774756167533668</PinX>
+						<PinY Unit="IN">2.915844486564001</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="146" UniqueID="{0DF6829F-21BA-48A3-AB56-9C43FFBEC506}" Name="Sheet.146" NameU="Sheet.146">
+					<XForm>
+						<PinX Unit="IN">5.404842236872282</PinX>
+						<PinY Unit="IN">4.200087794625601</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="147" UniqueID="{2EA3D47D-FF86-445C-AC12-455FB72CBD5D}" Name="Sheet.147" NameU="Sheet.147">
+					<XForm>
+						<PinX Unit="IN">6.373526595594051</PinX>
+						<PinY Unit="IN">4.203300589251201</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="148" UniqueID="{CB4F19AD-85EB-40D4-893E-143DDD4F50A1}" Name="Sheet.148" NameU="Sheet.148">
+					<XForm>
+						<PinX Unit="IN">5.279842236872282</PinX>
+						<PinY Unit="IN">2.918837794625601</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="149" UniqueID="{DBC48354-093A-42FD-A27D-F1CA6BE9E484}" Name="Sheet.149" NameU="Sheet.149">
+					<XForm>
+						<PinX Unit="IN">6.198282763127718</PinX>
+						<PinY Unit="IN">2.950087794625601</PinY>
+					</XForm>
+				</Shape>
+			</Shapes>
+		</Page>
+		<Page ID="0" Name="Specification PSM Diagram" NameU="PSM Diagram">
+			<Layer IX="0">
+				<Name>Connector</Name>
+				<NameUniv>Connector</NameUniv>
+				<Visible>1</Visible>
+			</Layer>
+			<Layer IX="1">
+				<Name>Instrument</Name>
+				<NameUniv>Instrument</NameUniv>
+				<Visible>1</Visible>
+			</Layer>
+			<Shapes>
+				<Shape ID="1" UniqueID="{2D03FB53-46F8-43DF-989A-D2E19BD32D15}" Name="Rounded rectangle" NameU="Rounded rectangle" Master="0">
+					<Text>Enter Desired Temperature Setting</Text>
+					<XForm>
+						<PinX Unit="IN">5.550000000000001</PinX>
+						<PinY Unit="IN">8.145833333333332</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="2" UniqueID="{B466C40F-7818-4558-B3C5-FD9043B2D1A2}" Name="Rounded rectangle.2" NameU="Rounded rectangle.2" Master="0">
+					<Text>Enter Desired Moisture Setting</Text>
+					<XForm>
+						<PinX Unit="IN">5.550000000000003</PinX>
+						<PinY Unit="IN">6.545833333333334</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="4" UniqueID="{AA88668F-42B2-43BC-AC7E-E1146120F1E3}" Name="Rounded rectangle.4" NameU="Rounded rectangle.4" Master="0">
+					<Text>Record Historical Temperature/Moisture Data</Text>
+					<XForm>
+						<PinX Unit="IN">5.500000000000002</PinX>
+						<PinY Unit="IN">0.370833333333333</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="5" UniqueID="{59DF3023-2B6F-40E9-98A6-C004A03C14C7}" Name="Rounded rectangle.6" NameU="Rounded rectangle.6" Master="0">
+					<Text>Read Moisture Sensor(s)</Text>
+					<XForm>
+						<PinX Unit="IN">8.000000000000002</PinX>
+						<PinY Unit="IN">5.495833333333332</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="6" UniqueID="{E2FAA129-C301-4DAA-BD83-20432D2A3189}" Name="Diamond" NameU="Diamond" Master="2">
+					<Text>Hit Enter</Text>
+					<XForm>
+						<PinX Unit="IN">5.550000000000003</PinX>
+						<PinY Unit="IN">7.445833333333335</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>1</LayerMember>
+					</LayerMem>
+					<Prop ID="1" Name="Description" NameU="Description">
+						<Value></Value>
+						<Label>Description</Label>
+					</Prop>
+					<Prop ID="2" Name="ConnectionSize" NameU="ConnectionSize">
+						<Value></Value>
+						<Label>Connection Size</Label>
+					</Prop>
+					<Prop ID="3" Name="Service" NameU="Service">
+						<Value></Value>
+						<Label>Service</Label>
+					</Prop>
+					<Prop ID="4" Name="Manufacturer" NameU="Manufacturer">
+						<Value></Value>
+						<Label>Manufacturer</Label>
+					</Prop>
+					<Prop ID="5" Name="Model" NameU="Model">
+						<Value></Value>
+						<Label>Model</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="8" UniqueID="{0E06FC9F-4167-4D94-A1D3-89D46A49AC6D}" Name="Sheet.8" NameU="Sheet.8">
+					<XForm>
+						<PinX Unit="IN">5.550000000000002</PinX>
+						<PinY Unit="IN">7.808333333333334</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="9" UniqueID="{0C37FCD5-E502-46B3-8EF7-2E70762CBB99}" Name="Sheet.9" NameU="Sheet.9">
+					<XForm>
+						<PinX Unit="IN">5.550000000000003</PinX>
+						<PinY Unit="IN">6.983333333333334</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="10" UniqueID="{844D2A3A-A7E6-46E3-80EB-5E8C0BF0677D}" Name="Rounded rectangle.10" NameU="Rounded rectangle.10" Master="0">
+					<Text>Read Temperature Sensor(s)</Text>
+					<XForm>
+						<PinX Unit="IN">3.000000000000001</PinX>
+						<PinY Unit="IN">5.495833333333332</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="13" UniqueID="{1C46F069-D64B-477F-8D6C-B1291621413B}" Name="Diamond.13" NameU="Diamond.13" Master="2">
+					<Text>Hit Enter</Text>
+					<XForm>
+						<PinX Unit="IN">5.550000000000003</PinX>
+						<PinY Unit="IN">5.920833333333333</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>1</LayerMember>
+					</LayerMem>
+					<Prop ID="1" Name="Description" NameU="Description">
+						<Value></Value>
+						<Label>Description</Label>
+					</Prop>
+					<Prop ID="2" Name="ConnectionSize" NameU="ConnectionSize">
+						<Value></Value>
+						<Label>Connection Size</Label>
+					</Prop>
+					<Prop ID="3" Name="Service" NameU="Service">
+						<Value></Value>
+						<Label>Service</Label>
+					</Prop>
+					<Prop ID="4" Name="Manufacturer" NameU="Manufacturer">
+						<Value></Value>
+						<Label>Manufacturer</Label>
+					</Prop>
+					<Prop ID="5" Name="Model" NameU="Model">
+						<Value></Value>
+						<Label>Model</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="14" UniqueID="{7E2020C5-7704-4BE4-8841-DC878F2CA491}" Name="Sheet.14" NameU="Sheet.14">
+					<XForm>
+						<PinX Unit="IN">5.550000000000003</PinX>
+						<PinY Unit="IN">6.245833333333334</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="15" UniqueID="{D2AA7DC3-3C47-4D8A-8C38-23B4C49E8076}" Name="Dynamic connector" NameU="Dynamic connector" Master="3">
+					<XForm>
+						<PinX Unit="IN">4.150000000000002</PinX>
+						<PinY Unit="IN">5.820833333333333</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="16" UniqueID="{674ABFC5-4470-4F29-A025-D942BC3D7B51}" Name="Dynamic connector.16" NameU="Dynamic connector.16" Master="3">
+					<XForm>
+						<PinX Unit="IN">6.900000000000002</PinX>
+						<PinY Unit="IN">5.820833333333333</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="17" UniqueID="{546CF37D-E40D-4025-A837-64DCD9748832}" Name="Rounded rectangle.17" NameU="Rounded rectangle.17" Master="0">
+					<Text>Check Moisture Reading vs. Desired Moisture Level</Text>
+					<XForm>
+						<PinX Unit="IN">8.000000000000002</PinX>
+						<PinY Unit="IN">3.795833333333332</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="18" UniqueID="{276B59FD-89B8-46BF-8EED-3DF4C5F3C242}" Name="Rounded rectangle.18" NameU="Rounded rectangle.18" Master="0">
+					<Text>Check Temperature Reading vs. Desired Moisture Level</Text>
+					<XForm>
+						<PinX Unit="IN">3.000000000000001</PinX>
+						<PinY Unit="IN">3.795833333333332</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="19" UniqueID="{36D9B011-C2C9-40BA-9447-5844F0712B46}" Name="Sheet.19" NameU="Sheet.19">
+					<XForm>
+						<PinX Unit="IN">3.000000000000001</PinX>
+						<PinY Unit="IN">4.645833333333332</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="20" UniqueID="{DBC6C9A5-2068-42BB-A769-81F3C6A29958}" Name="Sheet.20" NameU="Sheet.20">
+					<XForm>
+						<PinX Unit="IN">8.000000000000000</PinX>
+						<PinY Unit="IN">4.645833333333332</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="21" UniqueID="{BBA1E1BF-DB6D-4CC2-94E8-A6C10B9E6D3D}" Name="Rounded rectangle.21" NameU="Rounded rectangle.21" Master="0">
+					<Text>Check Temperature Reading vs. Desired Moisture Level</Text>
+					<XForm>
+						<PinX Unit="IN">3.000000000000001</PinX>
+						<PinY Unit="IN">2.895833333333332</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="22" UniqueID="{75EB510B-40C7-4BB1-810C-F35275FE59D6}" Name="Rounded rectangle.22" NameU="Rounded rectangle.22" Master="0">
+					<Text>Check Temperature Reading vs. Desired Moisture Level</Text>
+					<XForm>
+						<PinX Unit="IN">8.000000000000002</PinX>
+						<PinY Unit="IN">2.895833333333332</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="23" UniqueID="{46FBA954-9505-411B-980D-B717BC7A52B8}" Name="Sheet.23" NameU="Sheet.23">
+					<XForm>
+						<PinX Unit="IN">3.000000000000001</PinX>
+						<PinY Unit="IN">3.345833333333331</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="24" UniqueID="{DC3A63B3-4925-4316-ADFE-E47E2D6059D3}" Name="Sheet.24" NameU="Sheet.24">
+					<XForm>
+						<PinX Unit="IN">8.000000000000002</PinX>
+						<PinY Unit="IN">3.345833333333331</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="25" UniqueID="{5174BBEE-9B88-42E3-835D-69C62BA39123}" Name="Dynamic connector.25" NameU="Dynamic connector.25" Master="3">
+					<XForm>
+						<PinX Unit="IN">1.187500000000001</PinX>
+						<PinY Unit="IN">3.720833333333331</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="26" UniqueID="{DBA8C2C6-464E-4451-A65A-4BD9388A40C6}" Name="Dynamic connector.26" NameU="Dynamic connector.26" Master="3">
+					<XForm>
+						<PinX Unit="IN">1.200000000000001</PinX>
+						<PinY Unit="IN">5.495833333333332</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="27" UniqueID="{3161F281-E3D6-41CC-A05E-939D97F052B0}" Name="Dynamic connector.29" NameU="Dynamic connector.29" Master="3">
+					<XForm>
+						<PinX Unit="IN">9.812500000000004</PinX>
+						<PinY Unit="IN">3.720833333333331</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="28" UniqueID="{032D2C31-85EE-4967-A5DA-B80555F69754}" Name="Dynamic connector.30" NameU="Dynamic connector.30" Master="3">
+					<XForm>
+						<PinX Unit="IN">9.800000000000003</PinX>
+						<PinY Unit="IN">5.495833333333332</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="29" UniqueID="{26EEFC4C-69FC-4ECF-97DC-54410FF0AC9A}" Name="Rounded rectangle.31" NameU="Rounded rectangle.31" Master="0">
+					<Text>Activate Temperature Control</Text>
+					<XForm>
+						<PinX Unit="IN">3.000000000000001</PinX>
+						<PinY Unit="IN">1.945833333333331</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="30" UniqueID="{7E00084D-E4AA-45F3-8DBA-7AC09B5E9AF2}" Name="Rounded rectangle.25" NameU="Rounded rectangle.25" Master="0">
+					<Text>Activate Moisture Control</Text>
+					<XForm>
+						<PinX Unit="IN">8.000000000000004</PinX>
+						<PinY Unit="IN">1.945833333333331</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="31" UniqueID="{08CF1037-00C0-40B2-94C9-9918FC3F659E}" Name="Sheet.31" NameU="Sheet.31">
+					<XForm>
+						<PinX Unit="IN">8.000000000000004</PinX>
+						<PinY Unit="IN">2.420833333333331</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="32" UniqueID="{056C8936-20EF-4DFC-92B6-5335DF990405}" Name="Sheet.32" NameU="Sheet.32">
+					<XForm>
+						<PinX Unit="IN">3.000000000000001</PinX>
+						<PinY Unit="IN">2.420833333333331</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="33" UniqueID="{FF4D3810-7CAC-44E8-9095-CA807A7FFC64}" Name="Dynamic connector.33" NameU="Dynamic connector.33" Master="3">
+					<XForm>
+						<PinX Unit="IN">4.812500000000002</PinX>
+						<PinY Unit="IN">1.745833333333332</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="34" UniqueID="{77B57D25-7EE1-4066-9082-514153890D44}" Name="Dynamic connector.34" NameU="Dynamic connector.34" Master="3">
+					<XForm>
+						<PinX Unit="IN">6.187500000000001</PinX>
+						<PinY Unit="IN">1.745833333333332</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="35" UniqueID="{681C2BF6-B545-4FDA-A6FD-518480A4EAC2}" Name="Diamond.35" NameU="Diamond.35" Master="2">
+					<Text>Heater On/Off</Text>
+					<XForm>
+						<PinX Unit="IN">3.000000000000001</PinX>
+						<PinY Unit="IN">1.245833333333332</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>1</LayerMember>
+					</LayerMem>
+					<Prop ID="1" Name="Description" NameU="Description">
+						<Value></Value>
+						<Label>Description</Label>
+					</Prop>
+					<Prop ID="2" Name="ConnectionSize" NameU="ConnectionSize">
+						<Value></Value>
+						<Label>Connection Size</Label>
+					</Prop>
+					<Prop ID="3" Name="Service" NameU="Service">
+						<Value></Value>
+						<Label>Service</Label>
+					</Prop>
+					<Prop ID="4" Name="Manufacturer" NameU="Manufacturer">
+						<Value></Value>
+						<Label>Manufacturer</Label>
+					</Prop>
+					<Prop ID="5" Name="Model" NameU="Model">
+						<Value></Value>
+						<Label>Model</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="36" UniqueID="{2BD20FBB-0ADA-44C0-A5E4-F086574C81C5}" Name="Diamond.36" NameU="Diamond.36" Master="2">
+					<Text>Sprinkler On/Off</Text>
+					<XForm>
+						<PinX Unit="IN">8.000000000000004</PinX>
+						<PinY Unit="IN">1.245833333333332</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>1</LayerMember>
+					</LayerMem>
+					<Prop ID="1" Name="Description" NameU="Description">
+						<Value></Value>
+						<Label>Description</Label>
+					</Prop>
+					<Prop ID="2" Name="ConnectionSize" NameU="ConnectionSize">
+						<Value></Value>
+						<Label>Connection Size</Label>
+					</Prop>
+					<Prop ID="3" Name="Service" NameU="Service">
+						<Value></Value>
+						<Label>Service</Label>
+					</Prop>
+					<Prop ID="4" Name="Manufacturer" NameU="Manufacturer">
+						<Value></Value>
+						<Label>Manufacturer</Label>
+					</Prop>
+					<Prop ID="5" Name="Model" NameU="Model">
+						<Value></Value>
+						<Label>Model</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="37" UniqueID="{ED5255F1-5DDC-43A1-BB92-AC7D50EFB54F}" Name="Sheet.37" NameU="Sheet.37">
+					<XForm>
+						<PinX Unit="IN">3.000000000000001</PinX>
+						<PinY Unit="IN">1.608333333333332</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="38" UniqueID="{C9AD2C07-8E6B-4C78-A384-EDD821588FF3}" Name="Sheet.38" NameU="Sheet.38">
+					<XForm>
+						<PinX Unit="IN">8.000000000000004</PinX>
+						<PinY Unit="IN">1.608333333333332</PinY>
+					</XForm>
+				</Shape>
+			</Shapes>
+		</Page>
+		<Page ID="8" Name="Specification SCE Diagram (Level 1)" NameU="Specification SCE Diagram (Level 1)">
+			<Shapes>
+				<Shape ID="1" UniqueID="{947FFBFB-F502-4AFF-A335-D69760CC2A18}" Name="Sheet.1" NameU="Sheet.1">
+					<XForm>
+						<PinX Unit="IN">5.383333333333333</PinX>
+						<PinY Unit="IN">4.300000000000000</PinY>
+					</XForm>
+				</Shape>
+			</Shapes>
+		</Page>
+		<Page ID="5" Name="Specification SCE Diagram (Level 2)" NameU="Specification SCE Diagram">
+			<Shapes>
+				<Shape ID="1" UniqueID="{209292A8-023C-4EAA-8F19-DDF3CCC3A91B}" Name="Sheet.1" NameU="Sheet.1">
+					<XForm>
+						<PinX Unit="IN">5.400000000000000</PinX>
+						<PinY Unit="IN">4.000000000000000</PinY>
+					</XForm>
+				</Shape>
+			</Shapes>
+		</Page>
+		<Page ID="6" Name="Specification SCE Diagram w/ Testbench" NameU="Specification SCE Diagram w/ Testbench">
+			<Shapes>
+				<Shape ID="1" UniqueID="{B378C935-CF58-49A8-BCC3-DE304C7B1CE9}" Name="Sheet.1" NameU="Sheet.1">
+					<XForm>
+						<PinX Unit="IN">5.673333333333334</PinX>
+						<PinY Unit="IN">4.500000000000001</PinY>
+					</XForm>
+				</Shape>
+			</Shapes>
+		</Page>
+		<Page ID="7" Name="Specification SCE Diagram w/ Testbench (larger)" NameU="Specification SCE Diagram w/ Testbench (larger)">
+			<Shapes>
+				<Shape ID="1" UniqueID="{15999968-B3D1-4AD0-9A51-A94DC50D3543}" Name="Sheet.1" NameU="Sheet.1">
+					<XForm>
+						<PinX Unit="IN">5.500000000000000</PinX>
+						<PinY Unit="IN">4.250000000000000</PinY>
+					</XForm>
+				</Shape>
+			</Shapes>
+		</Page>
+	</Pages>
+</VisioDocument>
