@@ -14,3 +14,7 @@
 #define DEVIATION1 2.0
 #define DEVIATION2 5.0
 #define DEVIATION3 10.0
+
+#define cT 15
+#define cD 9
+#define cRH 2
