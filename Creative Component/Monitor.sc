@@ -90,7 +90,7 @@ behavior Sprinkler_Flag(i_receiver Sprinkler){
 		count = 0;
 		f1 = fopen("sprinklerout.txt","w");
 
-		while(count<=29) {
+	  while(count<=29) {
 			Sprinkler.receive(&data, sizeof(data));
 			if ( data == 0 )
 			  fprintf(f1,"Sprinker Off\n");
@@ -99,7 +99,8 @@ behavior Sprinkler_Flag(i_receiver Sprinkler){
 			else
 			  fprintf(f1,"No Change\n");
 			count++;
-		}
+		}			
+			
 		fclose(f1);
 		exit(0);
 
