@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisioDocument>
+	<DocumentProperties>
+		<Title></Title>
+		<HyperlinkBase href=""></HyperlinkBase>
+	</DocumentProperties>
+	<Pages>
+		<Page ID="4" Name="PSM-like Diagram" NameU="Behavioral">
+			<Layer IX="0">
+				<Name>Connector</Name>
+				<NameUniv>Connector</NameUniv>
+				<Visible>1</Visible>
+			</Layer>
+			<Shapes>
+				<Shape ID="34" UniqueID="{04B6038B-323B-4FCC-B148-505C7FA7A930}" Name="Sheet.34" NameU="Sheet.34">
+					<XForm>
+						<PinX Unit="IN_F">5.260000000000000</PinX>
+						<PinY Unit="IN_F">2.181875000000000</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="2" UniqueID="{7933F6A9-78CA-4D19-9FC1-ADAB04A37404}" Name="Sheet.2" NameU="Sheet.2">
+					<Text>
+
+SC_THREAD Stimulus
+
+ </Text>
+					<XForm>
+						<PinX Unit="IN_F">1.103750000000000</PinX>
+						<PinY Unit="IN_F">1.150625000000000</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="3" UniqueID="{2E17B03E-EE79-4FAB-9E5F-51A5DD75D1F4}" Name="Sheet.3" NameU="Sheet.3">
+					<Text>SC_MODULE Test_Bench</Text>
+					<XForm>
+						<PinX Unit="IN_F">1.260000000000000</PinX>
+						<PinY Unit="IN_F">4.088125000000000</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="5" UniqueID="{FC5D94E1-A97D-4049-AF99-CD777E8F330B}" Name="Sheet.5" NameU="Sheet.5">
+					<Text> SC_MODULE Design</Text>
+					<XForm>
+						<PinX Unit="IN_F">5.353750000000000</PinX>
+						<PinY Unit="IN_F">2.142812500000000</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="23" UniqueID="{FA75E748-2232-4E35-968B-C40BF52D605D}" Name="Sheet.23" NameU="Sheet.23">
+					<Text>Desired Temp</Text>
+					<XForm>
+						<PinX Unit="IN_F">2.243188472339522</PinX>
+						<PinY Unit="IN_F">1.619217908642241</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="18" UniqueID="{07439D64-E50F-4F61-AA59-2F6195042B3B}" Name="Sheet.18" NameU="Sheet.18">
+					<Text>
+
+SC_THREAD Monitor</Text>
+					<XForm>
+						<PinX Unit="IN_F">9.603750000000000</PinX>
+						<PinY Unit="IN_F">2.931874999999999</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="64" UniqueID="{E039E075-0C9F-4A39-94C7-FE0C2BFF48B6}" Name="Sheet.64" NameU="Sheet.64">
+					<Text>SC_MODULE TempProcessing
+
+
+
+
+</Text>
+					<XForm>
+						<PinX Unit="IN_F">4.032550218819704</PinX>
+						<PinY Unit="IN_F">2.049615174211823</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="68" UniqueID="{79D1B735-1A84-40C5-A17C-A8EAE3FAA4ED}" Name="Sheet.68" NameU="Sheet.68">
+					<Text>SC_MODULE HeaterControl
+
+
+
+
+
+</Text>
+					<XForm>
+						<PinX Unit="IN_F">6.822500000000000</PinX>
+						<PinY Unit="IN_F">2.056875000000000</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="12" UniqueID="{EB21247C-4A69-4DEB-A694-6CE5EAC0B5DD}" Name="Sheet.12" NameU="Sheet.12">
+					<Text>Sensor 
+Temp</Text>
+					<XForm>
+						<PinX Unit="IN_F">2.243188472339522</PinX>
+						<PinY Unit="IN_F">0.681875000000000</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="6" UniqueID="{1281F8ED-FE6E-4BAC-BFF9-4BA639D3AA45}" Name="Sheet.6" NameU="Sheet.6">
+					<Text>Heater On/Off</Text>
+					<XForm>
+						<PinX Unit="IN_F">8.416250000000000</PinX>
+						<PinY Unit="IN_F">3.119532091357759</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="79" UniqueID="{360A6617-E537-47CF-BB09-B39F2C50B2C9}" Name="Sheet.79" NameU="Sheet.79">
+					<Text>Sensor Temp</Text>
+					<XForm>
+						<PinX Unit="IN_F">8.416250000000000</PinX>
+						<PinY Unit="IN_F">2.494594486564001</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="137" UniqueID="{A867407C-38FB-4F81-9BC3-D3B81DE2252E}" Name="Sheet.137" NameU="Sheet.137">
+					<XForm>
+						<PinX Unit="IN_F">5.431874999999999</PinX>
+						<PinY Unit="IN_F">2.119375000000000</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="84" UniqueID="{5CF54524-6BDD-4732-B551-CDF034869BFB}" Name="Sheet.84" NameU="Sheet.84">
+					<Text>SC_MODULE HeaterControl
+
+
+
+
+</Text>
+					<XForm>
+						<PinX Unit="IN_F">6.720050218819704</PinX>
+						<PinY Unit="IN_F">2.049615174211823</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="86" UniqueID="{63A9A3D7-804D-44A7-92BD-A7173692F155}" Name="Sheet.86" NameU="Sheet.86">
+					<Text>SC_THREAD update</Text>
+					<XForm>
+						<PinX Unit="IN_F">4.041250000000000</PinX>
+						<PinY Unit="IN_F">1.556875000000000</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="92" UniqueID="{042B352A-8FC9-43A5-B67E-C3B6944AD05F}" Name="Sheet.92" NameU="Sheet.92">
+					<Text>SC_THREAD update</Text>
+					<XForm>
+						<PinX Unit="IN_F">6.791250000000000</PinX>
+						<PinY Unit="IN_F">1.556875000000000</PinY>
+					</XForm>
+				</Shape>
+			</Shapes>
+		</Page>
+	</Pages>
+</VisioDocument>
